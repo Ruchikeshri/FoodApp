@@ -1,0 +1,67 @@
+
+version: '2.1'
+services:
+  
+  favoriteservice:
+    image: favoriteservice
+    build: favoriteservice/ 
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+    ports:
+      - 8082:8082
+    healthcheck:
+      test: "exit 0"
+
+  searchservice:
+    image: searchservice
+    build: searchservice/
+    restart: always
+    network_mode: host
+    ports: 
+      - 8083:8083
+    healthcheck:
+      test: "exit 0"
+ 
+  userservice:
+    image: userservice
+    build: userservice/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mysqldb
+    ports: 
+      - 8081:8081
+    healthcheck:
+      test: "exit 0"
+
+  mongo:
+    image: mongo:3.2-jessie
+    ports:
+     - 27017:27017
+    container_name: mongo
+    network_mode: host
+    healthcheck:
+      test: "exit 0"
+
+  mysqldb:
+    image: mysql:8
+    ports:
+     - 3306:3306
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=user
+    network_mode: host
+    healthcheck:
+      test: "exit 0"
+
+  webapp:
+    build: webapp/
+    container_name: blissfulbiteswebapp
+    restart: always
+    ports:
+      - 4200:4200
+    healthcheck:
+      test: "exit 0"

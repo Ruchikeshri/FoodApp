@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light" style="background-color:#33383f;">
+
+     <span class="navbar-brand mb-0 h1"><a href="/" class="nav-link brand">Blissful Bites</a></span>
+     <div *ngIf="isPresent; then thenBlock else elseBlock"></div>
+     <ng-template #thenBlock>
+               <a class="nav-link" routerLink="register" routerLinkActive="active" (click)="isRegister()">
+                    <mat-icon matTooltip="SignUp" >person_add</mat-icon>
+               </a>
+     </ng-template>
+     <ng-template #elseBlock>
+          <a class="nav-link" routerLink="login" routerLinkActive="active" (click)="isLogin()">
+               <mat-icon matTooltip="Login">login</mat-icon>
+          </a>
+     </ng-template>
+</nav>

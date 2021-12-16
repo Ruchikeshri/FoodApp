@@ -1,0 +1,50 @@
+<body class="bg">
+  <article class="all-browsers">
+    <h3>Blissfull Bites</h3>
+    <article class="browser">
+      <h6>
+        <p>Good Food And Great Vibes!</p>
+      </h6>
+    </article>
+    <article class="browser">
+      <p>Wow, [this food] is amazing! If something tastes better than you expected, you could use the word wow to
+        express your surprise.</p>
+    </article>
+  </article>
+  <mat-card>
+    <div class="medium-list">
+      <div class="list-viewer-wrapper">
+        <div class="list-header-title">
+          <h2>Register</h2>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onRegisterSubmit()" novalidate>
+          <div class="form-container">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input id="email" matInput formControlName="email" [(ngModel)]="register.email"
+                placeholder="Enter your email" />
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input id="password" matInput formControlName="password" [(ngModel)]="register.password"
+                placeholder="Enter your password" [type]="hide ? 'password':'text'" />
+              <mat-icon matSuffix (click)="hide = !hide">
+                {{hide ? 'visibility' : 'visibility_off'}}
+              </mat-icon>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input id="Confirm Password" matInput formControlName="ConfirmPassword" [(ngModel)]="ConfirmPassword"
+                placeholder="confirm password" [type]="hide ? 'password':'text'" />
+              <mat-icon matSuffix (click)="hide = !hide">
+                {{hide ? 'visibility' : 'visibility_off'}}
+              </mat-icon>
+            </mat-form-field>
+          </div>
+          <button mat-button type="submit" class="mat-raised-button mat-primary sizing"
+            [disabled]="!registerForm.valid">SignUp</button>
+        </form>
+      </div>
+    </div>
+  </mat-card>
+</body>

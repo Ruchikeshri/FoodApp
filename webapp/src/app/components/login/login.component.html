@@ -1,0 +1,53 @@
+<body class="bg">
+  <article class="all-browsers">
+    <h3>Blissfull Bites</h3>
+
+    <article class="browser">
+      <h6>
+        <p>Good Food And Great Vibes!</p>
+      </h6>
+    </article>
+
+    <article class="browser">
+
+      <p>Wow, [this food] is amazing! If something tastes better than you expected, you could use the word wow to
+        express your surprise.</p>
+    </article>
+  </article>
+  <div class="res">
+    <mat-card style="padding-top: none;">
+      <div class="medium-list">
+        <div class="list-viewer-wrapper">
+          <div class="list-header-title">
+            <h2>Login</h2>
+          </div>
+
+          <form [formGroup]="loginform" (ngSubmit)="loginform.valid && onLoginSubmit()" novalidate>
+            <div class="form-container">
+
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input id="email" matInput formControlName="email" [(ngModel)]="login.email"
+                  placeholder="Enter your email" />
+              </mat-form-field>
+
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input id="password" matInput formControlName="password" [(ngModel)]="login.password"
+                  placeholder="Enter your password" [type]="hide ? 'password':'text'" />
+                <mat-icon matSuffix (click)="hide = !hide">
+                  {{hide ? 'visibility' : 'visibility_off'}}
+                </mat-icon>
+              </mat-form-field>
+              <button mat-button type="submit" class="mat-raised-button mat-primary sizing"
+                [disabled]="!loginform.valid">Login</button>
+              <div>
+                <a href="/" class="link">Forgot Password?</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</body>

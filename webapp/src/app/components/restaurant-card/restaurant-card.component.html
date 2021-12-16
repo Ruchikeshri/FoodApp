@@ -1,0 +1,41 @@
+<div class="home-container" style=" background-color: #b6cbde;">
+  <app-homepage></app-homepage>
+  <div class="card-deck pb5 " style="margin: 1rem;">
+    <div style="min-width: 20rem;margin: 1rem;" class="card"
+      *ngFor="let f of fav | paginate: {itemsPerPage:6,currentPage:p};">
+      <img style="width: 100%; height: 15rem;" class="card-img-top" src="{{f.restaurant.featured_image}}"
+        alt="Restaurant Image not Available">
+      <div class="card-body">
+        <div>
+          <h5 class="card-title heart"><a href="{{f.restaurant.url}}"> {{f.restaurant.name}}</a>
+            <button style="outline: none; border: none; background: none;" class="favouri"
+              (click)="addFavorite(f.restaurant)">
+              <i class="fa"
+                [ngClass]="{'fa-heart' : isFavorite[f.restaurant.id], 'fa-heart-o': !isFavorite[f.restaurant.id] }"></i>
+            </button>
+          </h5>
+          <div class="subtitle">
+            <mat-card-subtitle>Location: {{f.restaurant.location.address}}</mat-card-subtitle><br>
+          </div>
+          <div class="contents">
+            <mat-card-content style="font-size: 1rem;">Cuisines: {{f.restaurant.cuisines}}</mat-card-content><br>
+          </div>
+          <div class="contents">
+            <mat-card-content style="font-size: 1rem;">Click here to view <a href="{{f.restaurant.menu_url}}">menu</a>
+            </mat-card-content>
+          </div>
+          <mat-icon style="margin-right: 1rem; margin-top: 1rem;" matTooltip={{f.restaurant.timings}}>schedule
+          </mat-icon>
+          <mat-icon style="margin-top: 1rem;" matTooltip={{f.restaurant.phone_numbers}}>phone</mat-icon>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="pagination justify-content-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+  <app-footer></app-footer>
+
+</div>

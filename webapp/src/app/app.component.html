@@ -1,0 +1,10 @@
+
+    <div *ngIf="isPresent(); then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <app-favnavbar></app-favnavbar>
+    </ng-template>
+    <ng-template #elseBlock>
+        <app-navbar></app-navbar>
+    </ng-template>
+    
+    <router-outlet></router-outlet>

@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&family=Rubik:wght@500&display=swap');
+.content {
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}

@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+.heart {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-trash-alt:hover {
+    color: rgb(81, 81, 130);
+}
+
+.subtitle {
+    margin-bottom: .5rem;
+}
+
+h5 :hover{
+    text-decoration: none;
+}
+.card {
+    box-shadow: 0px 2px 6px grey, 0px 6px 6px rgb(126, 125, 125);
+    border-radius: 10px;
+}
+.card:hover{
+    transform: scale(1.02);
+}
+.card-img-top:hover {
+    opacity: 0.9;
+}
+img{
+    border-radius: 10px;
+    border: 0;
+}

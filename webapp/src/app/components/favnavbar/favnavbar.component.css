@@ -1,0 +1,42 @@
+.colorchange:hover {
+    background-color: rgb(53, 53, 58);
+    color: white;
+}
+
+.h1 {
+    font-size: 25px;
+}
+
+.brand {
+    padding: 0 !important;
+}
+
+span {
+    margin: 0;
+}
+
+.nav-link {
+    color: white;
+}
+
+
+
+.fa {
+    display: inline-block;
+    padding-right: .5rem;
+    font-size: large;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1;
+    font-family: FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

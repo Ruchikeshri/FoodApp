@@ -1,0 +1,26 @@
+<body style=" background-color: #b6cbde;">
+<div class="card-deck pb5 " style="margin: 1rem; ">
+  <div style="max-width: 25rem; min-width: 20rem; margin: 1rem;" class="card" *ngFor="let f of fav.restaurants| paginate: {itemsPerPage:6,currentPage:p};">
+    <img style="width: 100%; height: 15rem;" class="card-img-top" src="{{f.featured_image}}" alt="Restaurant Image not Available">
+    <div class="card-body">
+      <div>
+        <h5 class="card-title heart"><a href="{{f.url}}"> {{f.name}}</a>
+
+        <button style="outline: none; border: none; background: none;" class="favouri" (click)="deleteFavorite(f.id)">
+          <i class="fa fa-trash-alt" ></i>
+      </button>
+      </h5>
+        
+      <div class="subtitle"><mat-card-subtitle>Location: {{f.address}}</mat-card-subtitle><br></div>
+      <div class="contents"><mat-card-content style="font-size: 1rem;">Cuisines: {{f.cuisines}}</mat-card-content><br></div>
+      <div class="contents"><mat-card-content style="font-size: 1rem;">Click here to view <a href="{{f.menu_url}}">menu</a></mat-card-content><br></div>
+      <mat-icon style="margin-right: 1rem; margin-top: 1rem;" matTooltip={{f.timings}}>schedule</mat-icon>
+      <mat-icon style="margin-top: 1rem;" matTooltip={{f.phone_numbers}}>phone</mat-icon>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="pagination justify-content-center"><pagination-controls (pageChange) = "p = $event"></pagination-controls></div>
+</body>
+<app-footer></app-footer>
